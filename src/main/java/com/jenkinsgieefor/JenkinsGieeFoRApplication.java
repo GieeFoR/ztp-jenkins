@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 import java.util.Objects;
@@ -18,6 +19,11 @@ public class JenkinsGieeFoRApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(JenkinsGieeFoRApplication.class, args);
+    }
+
+    @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
     }
 
     @Bean
